@@ -1,0 +1,22 @@
+retreival is like a function which fetches data from data source(vector store,api) and query &
+on the basis of query it retrieves relatable documents
+
+#all retrievers in langhcain are runnables....
+
+
+###TYPE OF RETERIVERS#####
+1> based on data store
+    i> wikipedia retriever
+    ii> vector store
+    iii>archive retrievers
+
+2> on search strategy
+    i> memory
+    ii> MultiQuery
+    iii> contextual compression retriever
+
+
+
+##WIKIPEEDIA RETERIVER###
+retriever that queries the wikipedia API to fetch relevant content for a given query
+retrieves most relevant articles

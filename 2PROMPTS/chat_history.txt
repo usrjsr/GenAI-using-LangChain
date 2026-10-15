@@ -1,0 +1,2 @@
+SystemMessage(content='You are a helpful customer support agent'),
+AIMessage(content='your refund will be procesed between 3 to 5 days')

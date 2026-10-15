@@ -1,0 +1,17 @@
+{
+    "name": null,
+    "input_variables": [
+        "research_explanation",
+        "research_title",
+        "research_words"
+    ],
+    "optional_variables": [],
+    "output_parser": null,
+    "partial_variables": {},
+    "metadata": null,
+    "tags": null,
+    "template": "\nYou are an expert AI Research Paper Summarizer.\n\nResearch Paper Title:\n\"{research_title}\"\n\nYour task:\n1. Summarize ONLY this research paper.\n2. Generate approximately {research_words} words.\n3. Explanation style: {research_explanation}\n4. Explain:\n   - Core Idea\n   - Methodology\n   - Results\n   - Conclusion\n5. Use proper headings and bullet points.\n6. Do NOT create your own research paper title.\n7. Do NOT say 'Since no title was provided'.\n8. Provide Image and also flowchart wherever required\n\nImportant:\nThe paper title already exists and must be used exactly as given.\n",
+    "template_format": "f-string",
+    "validate_template": true,
+    "_type": "prompt"
+}

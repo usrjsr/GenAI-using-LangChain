@@ -1,0 +1,45 @@
+# Cricket
+
+Cricket is a popular team sport played between two teams of eleven players each. The game is played on a circular or oval-shaped field with a rectangular pitch in the center.
+
+## Basic Rules
+
+The main objective of cricket is to score more runs than the opposing team. One team bats to score runs, while the other team bowls and fields to restrict the batting team and dismiss its players.
+
+A cricket match can have different formats, including Test cricket, One Day Internationals (ODIs), and Twenty20 (T20) cricket.
+
+## Formats of Cricket
+
+**Test Cricket:** Test matches are played over a maximum of five days. Each team usually gets two innings to bat.
+
+**One Day International (ODI):** Each team faces a maximum of 50 overs. The team scoring the most runs wins the match.
+
+**T20 Cricket:** Each team faces a maximum of 20 overs. This format is known for its fast pace and aggressive batting.
+
+## Important Cricket Terms
+
+- **Run:** A unit of scoring in cricket.
+- **Over:** A set of six legal deliveries bowled by a bowler.
+- **Wicket:** Can refer to the stumps and bails, or the dismissal of a batter.
+- **Boundary:** Four runs are scored when the ball reaches the boundary after touching the ground, while six runs are scored when it crosses the boundary without touching the ground.
+- **LBW:** Leg Before Wicket, a method of dismissing a batter.
+- **Century:** When a batter scores 100 runs in an innings.
+- **Hat-trick:** When a bowler takes three wickets in three consecutive deliveries.
+
+## Famous Cricket Tournaments
+
+The ICC Cricket World Cup is an international ODI tournament featuring national teams. The ICC Men's T20 World Cup is an international tournament played in the T20 format.
+
+The Indian Premier League (IPL) is a professional T20 cricket league in India. It features city-based franchises and attracts players from around the world.
+
+## Famous Indian Cricketers
+
+Sachin Tendulkar is widely regarded as one of the greatest batters in cricket history. Virat Kohli is known for his batting consistency and run-chasing ability. MS Dhoni is famous for his captaincy and wicketkeeping. Rohit Sharma is known for his powerful batting and leadership.
+
+## Cricket Equipment
+
+The essential equipment used in cricket includes a bat, ball, stumps, and bails. Batters wear protective equipment such as helmets, pads, gloves, and abdominal guards. Wicketkeepers use specialized gloves and protective pads.
+
+## Conclusion
+
+Cricket combines physical skill, strategy, teamwork, and mental discipline. Its different formats make it appealing to casual viewers and dedicated fans worldwide.

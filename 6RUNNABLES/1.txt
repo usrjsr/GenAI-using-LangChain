@@ -1,0 +1,8 @@
+without using inheritance property https://colab.research.google.com/drive/1P11hpAPtjr0oIiqQ5pNsdnMxmascdbBY?usp=sharing
+with using inheritance reduced langchain codebase and reusability https://colab.research.google.com/drive/1gv3e-OfHCi6IuVBVR7xWmrcVl6gHsydv?usp=sharing 
+
+Runnables:
+1>TextSpecific Runnables(core langchain components converted into rnunables for pipelining)
+2>Runnable Primitives(fundamental building block for structuring execution logic..means ordering task specific runnables)
+
+

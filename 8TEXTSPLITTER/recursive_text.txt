@@ -1,0 +1,77 @@
+# Artificial Intelligence and Its Applications
+
+## 1. Introduction to Artificial Intelligence
+
+Artificial Intelligence (AI) is a branch of computer science that focuses on building machines and software capable of performing tasks that typically require human intelligence. These tasks include learning, reasoning, problem-solving, understanding language, and recognizing images. AI has become an important part of modern technology and is used in industries such as healthcare, education, banking, transportation, and entertainment.
+
+Machine learning is a subset of artificial intelligence that enables computers to learn patterns from data without being explicitly programmed for every possible situation. Instead of following only predefined rules, machine learning models use historical examples to make predictions or decisions. For example, an email spam filter learns to distinguish between spam and legitimate messages by analyzing previously labeled emails.
+
+## 2. Types of Machine Learning
+
+Machine learning is commonly divided into three major categories: supervised learning, unsupervised learning, and reinforcement learning. Each category uses a different approach to learn from data and solve problems.
+
+### Supervised Learning
+
+Supervised learning uses labeled training data, where every input has a corresponding correct output. The model learns the relationship between inputs and outputs and uses this relationship to predict results for unseen examples. Classification and regression are two common supervised learning tasks.
+
+Classification predicts a category, such as whether an email is spam or not spam. Regression predicts a numerical value, such as the expected price of a house based on its size, location, and number of rooms.
+
+### Unsupervised Learning
+
+Unsupervised learning works with data that does not have predefined labels. The objective is to discover hidden patterns, similarities, or structures within the dataset. Clustering is a common unsupervised learning technique.
+
+For example, an online shopping platform can use clustering to group customers according to their purchasing behavior. These groups can help the company understand customer preferences and design more relevant recommendations.
+
+### Reinforcement Learning
+
+Reinforcement learning involves an agent that interacts with an environment and learns through rewards and penalties. The agent tries to select actions that maximize its long-term cumulative reward.
+
+Reinforcement learning can be used in robotics, game-playing systems, autonomous navigation, and resource optimization. However, designing a suitable reward function and ensuring safe exploration can be challenging.
+
+## 3. Natural Language Processing
+
+Natural Language Processing (NLP) is a field of AI that enables computers to process, analyze, and generate human language. It combines techniques from linguistics, machine learning, and deep learning to make communication between humans and computers more effective.
+
+Common NLP applications include sentiment analysis, language translation, text summarization, question answering, speech recognition, and chatbots. A sentiment analysis model, for instance, can examine customer reviews and determine whether their overall sentiment is positive, negative, or neutral.
+
+Modern language models are trained on large collections of text and can generate coherent responses, summarize documents, answer questions, and assist with programming. Nevertheless, they can sometimes produce incorrect information, so important answers should be verified against reliable sources.
+
+## 4. What Is Retrieval-Augmented Generation?
+
+Retrieval-Augmented Generation, commonly called RAG, is an approach that combines information retrieval with language model generation. Instead of relying exclusively on knowledge learned during training, a RAG application retrieves relevant information from an external knowledge source and provides that information to the language model as context.
+
+A typical RAG pipeline contains several stages. First, documents are loaded from sources such as PDF files, text files, websites, or databases. Next, the documents are divided into smaller pieces called chunks. These chunks are converted into numerical representations called embeddings and stored in a searchable database.
+
+When a user asks a question, the system converts the query into an embedding and retrieves chunks that are semantically similar to the question. The retrieved information is then included in the prompt sent to the language model. Finally, the model generates an answer based on the provided context.
+
+## 5. Why Is Text Chunking Important?
+
+Large documents often exceed the amount of context that can be conveniently processed in a single request. Splitting a document into smaller chunks makes storage, retrieval, and processing more manageable.
+
+Chunk size is an important parameter. If chunks are too small, they may lose important context. If chunks are too large, they may contain unrelated information and reduce retrieval precision. Selecting an appropriate chunk size depends on the document structure, the embedding model, and the intended application.
+
+Chunk overlap allows neighboring chunks to share a small portion of their text. This helps preserve information that might otherwise be separated at a chunk boundary. For example, a chunk size of 500 characters and an overlap of 100 characters means that consecutive chunks can share 100 characters.
+
+## 6. LangChain and Recursive Text Splitting
+
+LangChain is a framework for developing applications powered by language models. It provides integrations for document loaders, text splitters, embedding models, vector databases, and language model APIs.
+
+The RecursiveCharacterTextSplitter is a text-splitting utility that attempts to preserve natural text boundaries. By default, it considers separators such as double newlines, single newlines, spaces, and individual characters, in that order of preference.
+
+The splitter first tries to divide text at paragraph boundaries. If a resulting piece is still too large, it attempts to split it at smaller structural boundaries. This recursive process continues until the pieces satisfy the configured size constraints or no smaller useful separator remains.
+
+For example, consider a document containing three paragraphs about machine learning. If the first paragraph is too long for the configured chunk size, the splitter may divide it into smaller pieces while attempting to preserve words and sentences. The resulting chunks can then be used for embedding generation and semantic search.
+
+## 7. Practical Applications of RAG
+
+A university can build a question-answering assistant that retrieves information from course notes, academic regulations, and examination guidelines. Students can ask questions in natural language instead of manually searching through multiple documents.
+
+A hospital may use a retrieval system to locate relevant information in approved medical documentation. Such systems require strong access controls, privacy safeguards, and validation because incorrect medical information can have serious consequences.
+
+A legal organization can use document retrieval to find relevant clauses, case records, and policy provisions. The application should provide traceable references to its source documents so that professionals can verify the information before acting on it.
+
+## 8. Conclusion
+
+Artificial intelligence continues to transform the way people interact with information and software. Machine learning helps systems discover patterns, NLP enables language-based applications, and RAG connects language models with external knowledge sources.
+
+Understanding document loading, recursive text splitting, embeddings, and vector search provides a strong foundation for building practical AI applications. Experimenting with different chunk sizes, overlap values, and separators helps developers understand how document preprocessing affects the quality of information retrieval.

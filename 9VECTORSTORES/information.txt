@@ -1,0 +1,27 @@
+desgined to store and retrieve data represented as numerical vectors
+storage-ensures that vectors and their associated metadata are retained whethe in-memory for quick lookup or on-disk for durability
+similarity search- helps retirieve the vectors most similar to a query vectors
+Indexing- provides a data structure(create secondary index of average vector after creating cluster e.g 10lakh rows takes in 10 cluster and take avergae vector and query take similarity with 10 avg vectors and whoever is clost it goes to those clusters and takes similarity scre there)
+CRUD Operation- maintaing the lifecycle of data-adding,reading,updating,deleting
+
+Use cases-semantic search,RAG,recommendation system
+
+Vector Store Vs Vector DataBase
+Vector store is a system for storing vectors and retreival
+but if more features which are  avaiable at the databases (e.g scaling,concurrency,transaction) is Vector DataBase
+
+so basically Vector store with extra database features is Vector Database..
+
+vector store-FAISS
+vectotr DB-Milvus,PineCone
+
+
+VECTOR STORES IN LANGCHAIN-
+supported stores -integrates multiple vector stores
+common interface- uniform vector store api lets you swap out one backend for another with minimal code changes
+Metadata Handling-most vector store in langchain allows you to attach metadata to each document,enabling filter based retreival
+
+
+###CHROMA VECTOR STORE###
+lightweight, open source vector database i.e especially friendly for local developement for small to medium scale production needs..
+lies between vector store and vector database

@@ -1,0 +1,12 @@
+
+.env
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+my_chroma_db/
+retrieve_chroma_db/
+
+7DOCUMENT_LOADERS/grades/
+.ipynb_checkpoints/

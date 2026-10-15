@@ -1,0 +1,175 @@
+RAG=documentloader + textsplitter + vectorstore + retrievers
+
+What is RAG?
+ANS: queryy(prompt) ---> LLM(stores knowledge as parameter ..more parameter more knowledgable) ---> Responses
+
+When LLM fails?
+ANS: 1> questions over private data as LLM has never seen that data on pretraining
+     2> current newss it can't if LLM dont have access to internet
+     3> instead of factually correct it gives wrong answer with confident i.e Hallaucinations
+
+How to solve this problem?
+ANS: Fine Tuning the pre-trained LLM over a small data which is related to my domain specific data
+    e.g after getting placed getting training in companies for 3 months i.e pretraining
+
+Type of FineTuning:
+1> SUpervised FineTuning: training on prompt with labelled desired output
+2> Continued Pretrained: dataset without labelled is provided to the LLM for continued training
+
+Process of FindTuning:
+i> Collect data: few hundred thousands carefully curated examples (prompt-desiredoutput kindaa labelled dataset)
+ii> choose method:full parameter FineTuning,LoRA/QLoRA
+iii> Train for a few epochs: keep the base weight frozend or partially frozen and update only a small subset
+iv> evalauate and safety test: measurement exact-match,factuality and Hallaucinations rate
+
+Major Problem with FT:
+i> training model is computationally heavy
+ii> its also expensivee
+iii> if data is changes frequentlyy then we need to train again and again which is not feasible
+
+SO HERE INCONTEXT LEARNING COMES INTO THE PICTURE...
+
+InContext Learning:
+is core capability where model learns to solve a task purely by seeing examples in the prompt without updating the weights
+its an LLM emergent property means its a behaviour or ability that  suddenly appears in a system when it reaches a certain scale or complexityy
+
+
+Instead of just example tasks,,retrieve background information,facts,documents product manuals etc..
+inject that into the prompt to augument the models knowledgeee(instead of example we send the whole contextttt)
+
+
+RAG is a way to make a kanguage model like Chatgpt smarter by giving it extra information at the time you ask your questions
+      queryy
+            \
+             prompt--->LLM---> Response
+            /
+     context
+
+RAG=information Retrieval + Text Generation
+
+
+steps of RAG:
+i>Indexing: creation of external knowledge base for context 
+ii>Retrieval: understaning query and searches the chunks that are reuqired for answering the queryy
+iii>Augumentation:Prompt creation with context and the queryy
+iv>Generation: uses incontext learning to answer the queryy
+
+
+
+INdexing: preparing knowledge base so that it can be efficiently searched at query time..4 substeps are there
+1>Document INgestion: load your source knowledge into memoryyy e.g pdf reports,word documents,,youtube transcriptss(langchain loaders are useddd to extract source knowledge)
+2>TextCHunking: break large documents into small, semantically meaninngful chunks
+ why chunks?
+    LLM have context limit..smaller chunks are more focused so better semantic search(using Textsplitterss..)
+3>Embedding Generation: convert each chunk into a dense vector that captures its meaninngful
+    why embeddings?
+    similar ideas land close together in vector space(using OpenAIembeddings)
+4>Storage in vector store: Store the vectores along with original chunk text+metadata in a vector database(Locally FAISS,VECTORSTORE...CLoud:Pinecone,Weaviate)
+
+        www---Document Loader---document
+                                    |
+                                    |
+                                Text splitter
+                                    |
+                                    |
+                            chunk1  chunk2 chunk3 ........
+                            |       |       |
+                            |       |       | 
+                            |       |       |
+                            Embedding Models 
+                            |       |       |
+                            |       |       |
+                             \      |      /
+                              \     |     /
+                              Vector Store(EXTERNAL KNOWLEDGE BASE)
+
+
+
+Retrieval:
+real time process of finding the most relevant pieces of information from a prebuilt index(create dduring indexing) based on the user's question
+
+        www---Document Loader---document
+                                    |
+                                    |
+                                Text splitter
+                                    |
+                                    |
+                            chunk1  chunk2 chunk3 ........
+                            |       |       |
+                            |       |       | 
+                            |       |       |
+                            Embedding Models 
+                            |       |       |
+                            |       |       |
+                             \      |      /
+                              \     |     /
+                              Vector Store(EXTERNAL KNOWLEDGE BASE)-------
+                                    |                                     |
+                                Sematic search 
+                                    ^                          Most Releavant Chunks(Context)
+                                    |
+-->Query(converted to embeddings)--->Retriever
+
+
+
+Augumentation:
+query and context are brought together to create a prompttt
+        www---Document Loader---document
+                                    |
+                                    |
+                                Text splitter
+                                    |
+                                    |
+                            chunk1  chunk2 chunk3 ........
+                            |       |       |
+                            |       |       | 
+                            |       |       |
+                            Embedding Models 
+                            |       |       |
+                            |       |       |
+                             \      |      /
+                              \     |     /
+                              Vector Store(EXTERNAL KNOWLEDGE BASE)-------
+                                    |                                     |
+                                Sematic search 
+                                    ^                          Most Releavant Chunks(Context)+query--->prompt
+                                    |                                       |
+-->Query(converted to embeddings)--->Retriever                              |
+            |                                                               |
+             ---------------------------------------------------------------
+
+
+
+Generation:
+final step where LLM uses the user's query and the retrieved and augumented context to generate the responses
+        www---Document Loader---document
+                                    |
+                                    |
+                                Text splitter
+                                    |
+                                    |
+                            chunk1  chunk2 chunk3 ........
+                            |       |       |
+                            |       |       | 
+                            |       |       |
+                            Embedding Models 
+                            |       |       |
+                            |       |       |
+                             \      |      /
+                              \     |     /
+                              Vector Store(EXTERNAL KNOWLEDGE BASE)-------
+                                    |                                     |
+                                Sematic search 
+                                    ^                          Most Releavant Chunks(Context)+query--->prompt----->LLM--------->Response
+                                    |                                       |
+-->Query(converted to embeddings)--->Retriever                              |
+            |                                                               |
+             ---------------------------------------------------------------
+
+
+
+HOW IT SOLVED ALL THE PROBLEMSSS?
+Private data: by providing the external knowledge base
+recent data:store the recent data into external knowledge basee..no retrainig of the model and all
+Hallaucinations: as exact context is provided by the external knowledge base so it gets reduceddd
+
